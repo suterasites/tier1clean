@@ -42,6 +42,11 @@ Three 1100 x 825 (4:3) visuals, one per stage card, sitting inside the dark inse
 | `stage-2-reclean.avif` | photo 20 | Corridor, after defects |
 | `stage-3-final-clean.avif` | photo 10 | Fitted out room, before handover |
 
+## faq/
+| File | Source | Notes |
+|---|---|---|
+| `spotless-finish.avif` | photo 22 | 900 x 1200. Fills the left half of the FAQ section, full bleed to the viewport edge. |
+
 ## contact/
 | File | Source | Notes |
 |---|---|---|
@@ -50,7 +55,7 @@ Three 1100 x 825 (4:3) visuals, one per stage card, sitting inside the dark inse
 ## gallery/
 Eight 700px-wide tiles kept at the source 4:5 portrait ratio, no cropping. Sized for a ~285px display slot at 2x.
 
-Of the 22 source photos, 20 are now on the page. Still unused: **19** (brick pavilion, flat light) and **22** (accessible shower).
+All 22 source photos are now on the page.
 
 `education-01` (school entry), `childcare-01` (playground), `education-02` (food tech kitchen), `commercial-01` (foyer, timber ceiling), `detail-01` (timber stair), `education-03` (corridor), `community-01` (community room), `detail-02` (accessible bathroom).
 
