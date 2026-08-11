@@ -33,6 +33,15 @@ Six 1200 x 750 (16:10) tiles, centre-cropped from portrait sources with the crop
 | `exterior-carparks.avif` | photo 06 | Covered entry, concrete forecourt, bike racks |
 | `additional-treatments.avif` | photo 12 | External bluestone stairs and entry |
 
+## stages/
+Three 1100 x 825 (4:3) visuals, one per stage card, sitting inside the dark inset frame.
+
+| File | Source | Stage |
+|---|---|---|
+| `stage-1-full-clean.avif` | photo 16 | Open room, post-construction |
+| `stage-2-reclean.avif` | photo 20 | Corridor, after defects |
+| `stage-3-final-clean.avif` | photo 10 | Fitted out room, before handover |
+
 ## contact/
 | File | Source | Notes |
 |---|---|---|
@@ -41,9 +50,11 @@ Six 1200 x 750 (16:10) tiles, centre-cropped from portrait sources with the crop
 ## gallery/
 Eight 700px-wide tiles kept at the source 4:5 portrait ratio, no cropping. Sized for a ~285px display slot at 2x.
 
+Of the 22 source photos, 20 are now on the page. Still unused: **19** (brick pavilion, flat light) and **22** (accessible shower).
+
 `education-01` (school entry), `childcare-01` (playground), `education-02` (food tech kitchen), `commercial-01` (foyer, timber ceiling), `detail-01` (timber stair), `education-03` (corridor), `community-01` (community room), `detail-02` (accessible bathroom).
 
 ## Encoding
-Everything is AVIF at q58 except the logos. Total asset weight ~1.4 MB, down from 2.6 MB at the first pass, mostly by dropping the gallery from 900px to 700px and moving the service tiles off JPEG.
+Everything is AVIF at q58 except the logos and the hero (q50). Total asset weight ~1.5 MB, down from 2.6 MB at the first pass, mostly by dropping the gallery from 900px to 700px and moving the service tiles off JPEG.
 
 Re-encode from the CRM originals rather than from these files if sizes ever change.
