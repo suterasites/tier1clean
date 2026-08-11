@@ -22,7 +22,7 @@ Both PNGs are derived from `tier1clean-logo-colour.png` in the CRM, trimmed of t
 These two were swapped on 2026-08-11 at James's request. The facade is the stronger opening image; the building and car park works well behind the CTA band's heavier overlay.
 
 ## services/
-Six 1200 x 750 (16:10) tiles, centre-cropped from portrait sources with the crop point tuned per image.
+Six 640 x 832 portrait tiles, centre-cropped from the portrait sources with the crop point tuned per image. They fill the left column of each service card, so they run the full height of the card rather than sitting above the copy.
 
 | File | Source | Shows |
 |---|---|---|
