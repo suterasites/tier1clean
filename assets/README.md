@@ -16,8 +16,10 @@ Both PNGs are derived from `tier1clean-logo-colour.png` in the CRM, trimmed of t
 ## hero/
 | File | Source | Notes |
 |---|---|---|
-| `hero.avif` | photo 13 | 1600 x 900. Two-storey building, sage cladding, finished car park, blue sky. Centre band cropped slightly high (42%) to keep the roofline and drop dead foreground tarmac. |
-| `cta.avif` | photo 01 | 1600 x 900. Board-formed concrete facade with arched glazing. Sits under a heavy dark overlay in the CTA band. |
+| `hero.avif` | photo 01 | 1600 x 900. Board-formed concrete facade with arched glazing. Centre band. Encoded at q50 rather than q58 because it is the LCP image and sits under a 0.55 to 0.85 dark overlay that masks fine detail. **The "CLARENDON WORKS" signage is legible in this shot** and it is now the hero, so clear it with Festim before launch. |
+| `cta.avif` | photo 13 | 1600 x 900. Two-storey building, sage cladding, finished car park, blue sky. Cropped slightly high (42%) to keep the roofline and drop dead foreground tarmac. |
+
+These two were swapped on 2026-08-11 at James's request. The facade is the stronger opening image; the building and car park works well behind the CTA band's heavier overlay.
 
 ## services/
 Six 1200 x 750 (16:10) tiles, centre-cropped from portrait sources with the crop point tuned per image.
