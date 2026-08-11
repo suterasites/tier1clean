@@ -764,6 +764,15 @@ p { margin: 0 0 1em; }
 .contact-list .icon { width: 22px; height: 22px; color: var(--blue); }
 .contact-hours { padding-top: 1rem; border-top: 1px solid var(--grey-100); color: var(--charcoal); }
 
+/* Fills the run of white space the left column leaves beside the taller form. */
+.contact-media { margin: 2.5rem 0 0; }
+.contact-media img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .contact-form {
   background: var(--grey-50);
   padding: 2.25rem;

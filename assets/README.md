@@ -33,6 +33,11 @@ Six 1200 x 750 (16:10) tiles, centre-cropped from portrait sources with the crop
 | `exterior-carparks.avif` | photo 06 | Covered entry, concrete forecourt, bike racks |
 | `additional-treatments.avif` | photo 12 | External bluestone stairs and entry |
 
+## contact/
+| File | Source | Notes |
+|---|---|---|
+| `finished-kitchen.avif` | photo 04 | 1000 x 750 (4:3 centre band). Fills the white space the contact section's left column leaves beside the taller form. |
+
 ## gallery/
 Eight 700px-wide tiles kept at the source 4:5 portrait ratio, no cropping. Sized for a ~285px display slot at 2x.
 
