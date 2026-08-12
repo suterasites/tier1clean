@@ -20,6 +20,9 @@
   --grey-50:  #F6F5F3;
   --white: #FFFFFF;
   --warm: #8B6B47;
+  /* Small blue text needs 4.5:1; --blue-dark only clears it on the lightest
+     stage card, so accents that sit on all three use this instead. */
+  --blue-deep: #1F4E75;
 
   --max: 1200px;
   --gutter: clamp(1rem, 3vw, 2rem);
@@ -30,10 +33,11 @@
      the reference design. Single weight, so the payload is small. */
   --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
 
-  /* Stage card tints: brand blue, construction stone, finished sage. */
-  --tint-blue:  #DCEAF6;
-  --tint-stone: #E7E4DC;
-  --tint-sage:  #DAE3DC;
+  /* Stage card tints: the brand blue mixed 10% / 26% / 44% into white, so the
+     three cards deepen as the job moves toward handover. */
+  --tint-blue-1: #ECF3F9;
+  --tint-blue-2: #CCDFEF;
+  --tint-blue-3: #A9C9E3;
 
   --radius: 4px;
   --radius-lg: 8px;
@@ -470,9 +474,9 @@ p { margin: 0 0 1em; }
   padding: 2.5rem;
   min-height: 400px;
 }
-.stage-row-1 { background: var(--tint-blue); }
-.stage-row-2 { background: var(--tint-stone); }
-.stage-row-3 { background: var(--tint-sage); }
+.stage-row-1 { background: var(--tint-blue-1); }
+.stage-row-2 { background: var(--tint-blue-2); }
+.stage-row-3 { background: var(--tint-blue-3); }
 
 .stage-copy {
   display: flex; flex-direction: column; justify-content: space-between;
@@ -503,7 +507,7 @@ p { margin: 0 0 1em; }
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--blue-dark);
+  color: var(--blue-deep);
 }
 
 .stage-visual {
