@@ -751,33 +751,24 @@ p { margin: 0 0 1em; }
   .why-band { padding: 4rem 0 5rem; }
 }
 
-/* FAQ - full-bleed photo on the left, grouped accordion on the right */
+/* FAQ - two grouped accordion columns across the container */
 .faq {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  padding: 5rem 0 5.5rem;
   background: var(--grey-50);
   color: var(--black);
 }
-.faq-media { min-height: 0; background: var(--grey-100); }
-.faq-media img { width: 100%; height: 100%; object-fit: cover; }
-
-.faq-body {
-  min-width: 0;
-  padding-block: 5rem;
-  padding-left: clamp(1.5rem, 4vw, 4rem);
-  /* line the right edge up with the page container */
-  padding-right: max(var(--gutter), calc((100vw - var(--max)) / 2));
+.faq-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* row gap only bites once the columns stack */
+  gap: 2.75rem 4.5rem;
+  align-items: start;
 }
-.faq-body h2 {
-  margin: 0 0 1rem;
-  font-size: clamp(2rem, 3.6vw, 3rem);
-  line-height: 1.02;
-}
-.faq-intro { color: var(--grey-500); margin: 0 0 1rem; max-width: 54ch; }
+.faq-col { min-width: 0; }
 
 .faq-group {
   display: flex; align-items: center; gap: 0.8rem;
-  margin: 2.75rem 0 0.25rem;
+  margin: 0 0 0.25rem;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.85rem;
@@ -832,9 +823,8 @@ p { margin: 0 0 1em; }
 .faq-a p { margin: 0; color: var(--grey-500); font-size: 0.97rem; line-height: 1.7; }
 
 @media (max-width: 900px) {
-  .faq { grid-template-columns: 1fr; }
-  .faq-media { aspect-ratio: 4 / 3; }
-  .faq-body { padding: 3.25rem var(--gutter) 3.5rem; }
+  .faq { padding: 3.5rem 0 4rem; }
+  .faq-cols { grid-template-columns: 1fr; }
 }
 
 /* Contact - detail cards on a tinted field, form in a white card with a
