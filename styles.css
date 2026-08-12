@@ -1076,30 +1076,6 @@ p { margin: 0 0 1em; }
   .footer-bottom-right { text-align: left; }
 }
 
-/* Sticky mobile call CTA */
-.sticky-call {
-  display: none;
-  position: fixed;
-  bottom: 1rem; left: 1rem; right: 1rem;
-  z-index: 60;
-  background: var(--blue);
-  color: var(--white);
-  padding: 0.95rem 1.25rem;
-  border-radius: var(--radius);
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-  align-items: center; justify-content: center; gap: 0.6rem;
-}
-.sticky-call .icon { width: 20px; height: 20px; }
-
-@media (max-width: 720px) {
-  .sticky-call { display: flex; }
-  main { padding-bottom: 4.5rem; }
-}
-
 /* Focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid var(--blue-bright);
