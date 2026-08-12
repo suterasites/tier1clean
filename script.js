@@ -100,6 +100,28 @@
         ticking = true;
       }
     }, { passive: true });
+
+    // Solid white bar once the hero has scrolled past it. Watched with an
+    // observer rather than a scroll threshold so it costs no layout reads per
+    // frame and does not need to know the hero's height.
+    const hero = document.querySelector('.hero');
+    if (hero && 'IntersectionObserver' in window) {
+      let observer = null;
+      const watch = () => {
+        if (observer) observer.disconnect();
+        observer = new IntersectionObserver(([entry]) => {
+          navBar.classList.toggle('is-solid', !entry.isIntersecting);
+        }, { rootMargin: (-navBar.offsetHeight) + 'px 0px 0px 0px' });
+        observer.observe(hero);
+      };
+      watch();
+      // the bar changes height at the breakpoints, so the margin is re-measured
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(watch, 150);
+      });
+    }
   }
 
   // Mobile nav toggle

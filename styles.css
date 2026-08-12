@@ -161,7 +161,8 @@ p { margin: 0 0 1em; }
   align-items: center;
   padding: 1.6rem clamp(1.25rem, 3.2vw, 3rem);
   pointer-events: none;
-  transition: transform 240ms ease;
+  transition: transform 240ms ease, background-color 240ms ease, border-color 240ms ease;
+  border-bottom: 1px solid transparent;
 }
 .site-nav-bar.is-hidden { transform: translateY(-120%); }
 .site-nav-bar > * { pointer-events: auto; }
@@ -173,8 +174,11 @@ p { margin: 0 0 1em; }
   min-width: 0;
 }
 /* The wordmark is ~9.2:1. It was cramped in the old centre pill; left-aligned
-   it has room, but keep it modest so it does not crowd the first link. */
+   it has room, but keep it modest so it does not crowd the first link. Two
+   copies: the white one over the hero, the black one over the solid bar. The
+   link carries the accessible name, so both images are decorative. */
 .brand-logo { height: 26px; width: auto; max-width: 100%; display: block; }
+.brand-logo-dark { display: none; }
 
 .primary-nav { grid-column: 2; justify-self: center; }
 .nav-list {
@@ -260,10 +264,12 @@ p { margin: 0 0 1em; }
   font-size: 0.85rem;
   letter-spacing: 0.1em;
 }
+/* --blue behind white text is only 4.00:1, under the 4.5 this size needs;
+   --blue-dark is 6.02:1 and reads the same at a glance. */
 .btn-quote:hover {
-  background: var(--blue);
+  background: var(--blue-dark);
   color: var(--white);
-  border-color: var(--blue);
+  border-color: var(--blue-dark);
 }
 
 .nav-toggle {
@@ -320,6 +326,42 @@ p { margin: 0 0 1em; }
 
 .mobile-nav-cta { margin-top: 1.25rem; }
 .mobile-nav-cta a { justify-content: center; border-bottom: 0; }
+
+/* Past the hero the bar is over white, grey, a navy band and a photo band by
+   turns. Rather than guess a text colour per section, it takes a solid white
+   surface, which is legible over all of them - so the white type, the white
+   wordmark and the white button all invert. Desktop only: below 960px the bar
+   is already solid black at every scroll position. */
+@media (min-width: 961px) {
+  .site-nav-bar.is-solid {
+    background: var(--white);
+    border-bottom-color: var(--grey-100);
+    /* a solid bar should catch clicks rather than pass them to the page under it */
+    pointer-events: auto;
+  }
+  .site-nav-bar.is-solid .brand-logo-light { display: none; }
+  .site-nav-bar.is-solid .brand-logo-dark { display: block; }
+
+  .site-nav-bar.is-solid .nav-list > li > a,
+  .site-nav-bar.is-solid .nav-trigger { color: var(--black); }
+  .site-nav-bar.is-solid .nav-list > li > a:hover,
+  .site-nav-bar.is-solid .nav-trigger:hover,
+  .site-nav-bar.is-solid .nav-trigger[aria-expanded="true"] {
+    color: var(--blue-dark);
+    border-bottom-color: var(--blue-dark);
+  }
+
+  /* the white-on-transparent button would disappear into a white bar */
+  .site-nav-bar.is-solid .btn-quote {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+  .site-nav-bar.is-solid .btn-quote:hover {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+  }
+}
 
 /* Six links, two of them carrying carets, plus a 9.2:1 wordmark and a button.
    Modelled across 960-1920px: tighten the links and the wordmark in two steps,
