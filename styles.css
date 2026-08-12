@@ -172,7 +172,9 @@ p { margin: 0 0 1em; }
   gap: clamp(1.5rem, 3.4vw, 3.25rem);
   margin: 0; padding: 0;
 }
-.primary-nav a {
+.nav-list > li > a,
+.nav-trigger {
+  display: inline-flex; align-items: center; gap: 0.45rem;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 0.9rem;
@@ -180,14 +182,60 @@ p { margin: 0 0 1em; }
   text-transform: uppercase;
   color: var(--white);
   white-space: nowrap;
+  background: none; border: 0;
   padding: 0.4rem 0;
   border-bottom: 1px solid transparent;
   transition: border-color 180ms ease, color 180ms ease;
 }
-.primary-nav a:hover {
+.nav-list > li > a:hover,
+.nav-trigger:hover,
+.nav-trigger[aria-expanded="true"] {
   color: var(--white);
   border-bottom-color: rgba(255, 255, 255, 0.75);
 }
+
+.nav-caret {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 180ms ease;
+}
+.nav-trigger[aria-expanded="true"] .nav-caret { transform: rotate(-135deg) translate(-2px, -2px); }
+
+/* Dropdown panel. White card over the photo, hung under its own nav item and
+   centred on it. The 14px offset leaves a gap the pointer can cross without
+   the hover-out closing the menu, which the 180ms close delay in script.js
+   also covers. */
+.nav-item { position: relative; }
+.nav-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 0.4rem;
+  z-index: 49;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+}
+.nav-panel ul { display: flex; flex-direction: column; }
+.nav-panel a {
+  display: block;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.94rem;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  color: var(--charcoal);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.nav-panel a:hover { background: var(--grey-50); color: var(--blue-dark); }
 
 .header-cta {
   display: flex; gap: 0.75rem;
@@ -226,24 +274,57 @@ p { margin: 0 0 1em; }
   padding: 1rem var(--gutter) 1.5rem;
 }
 .mobile-nav ul { display: flex; flex-direction: column; }
-.mobile-nav a {
-  display: flex; align-items: center;
+.mobile-nav > ul > li > a,
+.mobile-sub-trigger {
+  display: flex; align-items: center; justify-content: space-between;
   width: 100%;
   padding: 0.95rem 0;
   font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.06em;
   text-transform: uppercase; color: var(--white);
+  background: none; border: 0;
   border-bottom: 1px solid var(--charcoal);
+  text-align: left;
 }
+.mobile-sub-trigger .nav-caret { transform: rotate(45deg) translate(-2px, -2px); }
+.mobile-sub-trigger[aria-expanded="true"] .nav-caret { transform: rotate(-135deg) translate(-2px, -2px); }
+
+/* Full-bleed tinted tray, so an open accordion reads as nested rather than as
+   more top-level items. */
+.mobile-sub {
+  background: var(--charcoal);
+  margin: 0 calc(-1 * var(--gutter));
+}
+.mobile-sub a {
+  display: block;
+  padding: 0.75rem var(--gutter);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--grey-100);
+  border-bottom: 1px solid var(--grey-700);
+}
+.mobile-sub li:last-child a { border-bottom: 0; }
+
 .mobile-nav-cta { margin-top: 1.25rem; }
 .mobile-nav-cta a { justify-content: center; border-bottom: 0; }
 
-/* The six links plus the wordmark plus the button stop fitting well before the
-   mobile breakpoint. Tighten the links first, then drop the button. */
-@media (max-width: 1180px) {
+/* Six links, two of them carrying carets, plus a 9.2:1 wordmark and a button.
+   Modelled across 960-1920px: tighten the links and the wordmark in two steps,
+   then drop the button. Worst-case clearance between the nav and the wordmark
+   is ~26px, at the bottom of each tier. */
+@media (max-width: 1300px) {
+  .brand-logo { height: 24px; }
   .nav-list { gap: 1.4rem; }
-  .primary-nav a { font-size: 0.82rem; letter-spacing: 0.07em; }
+  .nav-list > li > a,
+  .nav-trigger { font-size: 0.82rem; letter-spacing: 0.07em; }
 }
 @media (max-width: 1040px) {
+  .brand-logo { height: 22px; }
+  .nav-list { gap: 1.1rem; }
+  .nav-list > li > a,
+  .nav-trigger { font-size: 0.8rem; letter-spacing: 0.06em; }
   .header-cta { display: none; }
 }
 
@@ -254,6 +335,8 @@ p { margin: 0 0 1em; }
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     pointer-events: auto;
   }
+  /* nothing competes with it once the links are behind the toggle */
+  .brand-logo { height: 26px; }
   .primary-nav, .header-cta { display: none; }
   .nav-toggle { display: flex; }
   /* Hung off the bar itself rather than offset by a hand-measured number, so

@@ -23,7 +23,9 @@ Sampled from Festim's own logo: blue `#3C84C0`, black `#1A1A1A`, navy `#101A24`.
 Hero, The Three Stages, Services (6 tiles, real photos), Recent Work (8-tile portrait gallery), About, CTA band, Why Builders Use Tier1Clean, FAQ (8, with FAQPage schema), Contact, Footer.
 
 ## Header and hero
-Rebuilt 2026-08-12 against a reference James supplied (kudanilexplorer.com). Transparent bar over the hero: wordmark hard left, six links on the page centre line, solid white CTA hard right. No pill, no backdrop blur, no dropdowns. The hero photo runs full bleed with the headline on the centre line and a sentence-case strap directly beneath it, rather than the strap being pinned to the bottom of the viewport.
+Rebuilt 2026-08-12 against a reference James supplied (kudanilexplorer.com). Transparent bar over the hero: wordmark hard left, six links on the page centre line, solid white CTA hard right. No pill, no backdrop blur. Services and About carry dropdown menus (white panel, hover or click to open, Escape or outside-click to close); the mobile drawer mirrors them as accordions. The hero photo runs full bleed with the headline on the centre line and a sentence-case strap directly beneath it, rather than the strap being pinned to the bottom of the viewport.
+
+Nav fit is the fiddly part, because a 9.2:1 wordmark, six links and a button all want the same row. Link size, tracking, gap and logo height step down at 1300px and again at 1040px, where the button drops; the links go behind the toggle at 960px. Modelled across 960-1920px, worst-case clearance is ~26px. Re-check it if a nav label gets longer.
 
 Two things about the reference were deliberately **not** copied, because they belong to a different type system than the rest of this page:
 - **The typeface.** The reference sets its headline in a wide geometric sans. Oswald is condensed, which is close to its opposite. Every other heading, chip and button on this page is Oswald, so the hero uses it too. To go the other way, change `--font-display` in `styles.css` and the Google Fonts `<link>` in `index.html`. That is a whole-page change, not a hero change.

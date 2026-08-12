@@ -133,9 +133,37 @@
     <nav class="primary-nav" aria-label="Primary navigation">
       <ul class="nav-list">
         <li><a href="#stages">The Stages</a></li>
-        <li><a href="#services">Services</a></li>
+
+        <li class="nav-item">
+          <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-services">
+            Services <span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div id="menu-services" class="nav-panel" role="region" aria-label="Services menu" hidden>
+            <ul>
+              <li><a href="#services">Windows &amp; High Level</a></li>
+              <li><a href="#services">Kitchens &amp; Joinery</a></li>
+              <li><a href="#services">Bathrooms &amp; Amenities</a></li>
+              <li><a href="#services">Floors &amp; Hard Surfaces</a></li>
+              <li><a href="#services">Exterior &amp; Car Parks</a></li>
+              <li><a href="#services">Additional Treatments</a></li>
+            </ul>
+          </div>
+        </li>
+
         <li><a href="#projects">Recent Work</a></li>
-        <li><a href="#about">About</a></li>
+
+        <li class="nav-item">
+          <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-about">
+            About <span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div id="menu-about" class="nav-panel" role="region" aria-label="About menu" hidden>
+            <ul>
+              <li><a href="#about">About Tier1Clean</a></li>
+              <li><a href="#why">Why Builders Use Us</a></li>
+            </ul>
+          </div>
+        </li>
+
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -152,9 +180,29 @@
   <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
     <ul>
       <li><a href="#stages">The Stages</a></li>
-      <li><a href="#services">Services</a></li>
+      <li>
+        <button type="button" class="mobile-sub-trigger" aria-expanded="false" aria-controls="mobile-sub-services">
+          Services <span class="nav-caret" aria-hidden="true"></span>
+        </button>
+        <ul id="mobile-sub-services" class="mobile-sub" hidden>
+          <li><a href="#services">Windows &amp; High Level</a></li>
+          <li><a href="#services">Kitchens &amp; Joinery</a></li>
+          <li><a href="#services">Bathrooms &amp; Amenities</a></li>
+          <li><a href="#services">Floors &amp; Hard Surfaces</a></li>
+          <li><a href="#services">Exterior &amp; Car Parks</a></li>
+          <li><a href="#services">Additional Treatments</a></li>
+        </ul>
+      </li>
       <li><a href="#projects">Recent Work</a></li>
-      <li><a href="#about">About</a></li>
+      <li>
+        <button type="button" class="mobile-sub-trigger" aria-expanded="false" aria-controls="mobile-sub-about">
+          About <span class="nav-caret" aria-hidden="true"></span>
+        </button>
+        <ul id="mobile-sub-about" class="mobile-sub" hidden>
+          <li><a href="#about">About Tier1Clean</a></li>
+          <li><a href="#why">Why Builders Use Us</a></li>
+        </ul>
+      </li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
