@@ -57,6 +57,13 @@ a { color: var(--blue); text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 ul { list-style: none; padding: 0; margin: 0; }
 
+/* The `hidden` attribute is only enforced by the UA stylesheet, and ANY author
+   rule that sets display beats it, because author origin outranks UA origin -
+   specificity never enters into it. `.mobile-nav ul { display: flex }` was
+   silently doing exactly that to the collapsed submenus, so they rendered open
+   and the toggles appeared dead. This makes the attribute mean what it says. */
+[hidden] { display: none !important; }
+
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 700;
