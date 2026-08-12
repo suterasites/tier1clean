@@ -126,50 +126,18 @@
 
 <header class="site-header" id="top">
   <div class="site-nav-bar">
-    <a href="/" class="brand brand-mobile" aria-label="Tier1Clean home">
+    <a href="/" class="brand" aria-label="Tier1Clean home">
       <img src="assets/logo/logo-light.png" alt="Tier1Clean logo" class="brand-logo" width="240" height="26">
     </a>
 
     <nav class="primary-nav" aria-label="Primary navigation">
-      <ul class="mega-nav">
-
-        <li class="mega-item" data-mega="services">
-          <button type="button" class="mega-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="mega-services">
-            Services <span class="mega-caret" aria-hidden="true"></span>
-          </button>
-          <div id="mega-services" class="mega-panel" role="region" aria-label="Services menu" hidden>
-            <ul class="mega-list">
-              <li><a href="#stages" class="mega-link"><span class="mega-link-title">The Three Stages</span><span class="mega-link-sub">Full clean, re-clean, final clean.</span></a></li>
-              <li><a href="#services" class="mega-link"><span class="mega-link-title">Windows &amp; High Level</span><span class="mega-link-sub">Glazing, frames, tracks and fittings.</span></a></li>
-              <li><a href="#services" class="mega-link"><span class="mega-link-title">Kitchens &amp; Joinery</span><span class="mega-link-sub">Bench tops, splash backs and robes.</span></a></li>
-              <li><a href="#services" class="mega-link"><span class="mega-link-title">Bathrooms &amp; Amenities</span><span class="mega-link-sub">Fixtures, screens and tiled walls.</span></a></li>
-              <li><a href="#services" class="mega-link"><span class="mega-link-title">Floors &amp; Hard Surfaces</span><span class="mega-link-sub">Carpet, timber, tile and concrete.</span></a></li>
-              <li><a href="#services" class="mega-link"><span class="mega-link-title">Exterior &amp; Car Parks</span><span class="mega-link-sub">Facades, basements and entrances.</span></a></li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="mega-item" data-mega="about">
-          <button type="button" class="mega-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="mega-about">
-            About <span class="mega-caret" aria-hidden="true"></span>
-          </button>
-          <div id="mega-about" class="mega-panel" role="region" aria-label="About menu" hidden>
-            <ul class="mega-list">
-              <li><a href="#projects" class="mega-link"><span class="mega-link-title">Recent Work</span><span class="mega-link-sub">Projects cleaned for handover.</span></a></li>
-              <li><a href="#about" class="mega-link"><span class="mega-link-title">About Tier1Clean</span><span class="mega-link-sub">Melbourne based, trade only.</span></a></li>
-              <li><a href="#why" class="mega-link"><span class="mega-link-title">Why Builders Use Us</span><span class="mega-link-sub">Scope, staging and experience.</span></a></li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="nav-brand-slot">
-          <a href="/" class="brand brand-pill" aria-label="Tier1Clean home">
-            <img src="assets/logo/logo-light.png" alt="" class="brand-logo" width="295" height="32">
-          </a>
-        </li>
-
-        <li><a href="#faq" class="mega-direct">FAQ</a></li>
-        <li><a href="#contact" class="mega-direct">Contact</a></li>
+      <ul class="nav-list">
+        <li><a href="#stages">The Stages</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Recent Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -182,32 +150,13 @@
     </button>
 
   <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
-    <ul class="mobile-mega">
-      <li>
-        <button type="button" class="mobile-mega-trigger" aria-expanded="false" aria-controls="mobile-mega-services">
-          Services <span class="mega-caret" aria-hidden="true"></span>
-        </button>
-        <ul id="mobile-mega-services" class="mobile-mega-panel" hidden>
-          <li><a href="#stages">The Three Stages</a></li>
-          <li><a href="#services">Windows &amp; High Level</a></li>
-          <li><a href="#services">Kitchens &amp; Joinery</a></li>
-          <li><a href="#services">Bathrooms &amp; Amenities</a></li>
-          <li><a href="#services">Floors &amp; Hard Surfaces</a></li>
-          <li><a href="#services">Exterior &amp; Car Parks</a></li>
-        </ul>
-      </li>
-      <li>
-        <button type="button" class="mobile-mega-trigger" aria-expanded="false" aria-controls="mobile-mega-about">
-          About <span class="mega-caret" aria-hidden="true"></span>
-        </button>
-        <ul id="mobile-mega-about" class="mobile-mega-panel" hidden>
-          <li><a href="#projects">Recent Work</a></li>
-          <li><a href="#about">About Tier1Clean</a></li>
-          <li><a href="#why">Why Builders Use Us</a></li>
-        </ul>
-      </li>
-      <li><a href="#faq" class="mobile-direct">FAQ</a></li>
-      <li><a href="#contact" class="mobile-direct">Contact</a></li>
+    <ul>
+      <li><a href="#stages">The Stages</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Recent Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="mobile-nav-cta">
       <a href="tel:0416090408" class="btn btn-primary btn-block">Call 0416 090 408</a>
@@ -221,10 +170,10 @@
   <section class="hero">
     <img src="assets/hero/hero.avif" alt="Completed commercial building with board-formed concrete facade and arched glazing, cleaned by Tier1Clean for handover" class="hero-image" width="1600" height="900" fetchpriority="high">
     <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="container hero-content">
+    <div class="hero-content">
       <h1>Handover Ready.<br>On Schedule.</h1>
+      <p class="hero-strap">Premium builders cleaning across Melbourne. Commercial, education and residential projects, cleaned to a handover standard.</p>
     </div>
-    <p class="hero-strap">Premium builders cleaning across Melbourne. Commercial, education and residential projects, cleaned to a handover standard.</p>
   </section>
 
   <section id="stages" class="stages">

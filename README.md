@@ -22,6 +22,15 @@ Sampled from Festim's own logo: blue `#3C84C0`, black `#1A1A1A`, navy `#101A24`.
 ## Sections
 Hero, The Three Stages, Services (6 tiles, real photos), Recent Work (8-tile portrait gallery), About, CTA band, Why Builders Use Tier1Clean, FAQ (8, with FAQPage schema), Contact, Footer.
 
+## Header and hero
+Rebuilt 2026-08-12 against a reference James supplied (kudanilexplorer.com). Transparent bar over the hero: wordmark hard left, six links on the page centre line, solid white CTA hard right. No pill, no backdrop blur, no dropdowns. The hero photo runs full bleed with the headline on the centre line and a sentence-case strap directly beneath it, rather than the strap being pinned to the bottom of the viewport.
+
+Two things about the reference were deliberately **not** copied, because they belong to a different type system than the rest of this page:
+- **The typeface.** The reference sets its headline in a wide geometric sans. Oswald is condensed, which is close to its opposite. Every other heading, chip and button on this page is Oswald, so the hero uses it too. To go the other way, change `--font-display` in `styles.css` and the Google Fonts `<link>` in `index.html`. That is a whole-page change, not a hero change.
+- **Title case.** The reference headline is title case; every heading here is uppercase via the base `h1, h2, h3, h4` rule. Add `text-transform: none` to `.hero h1` for the reference treatment.
+
+The old centre-pill nav with two dropdown menus is in git history at `a79ef18` if it is ever wanted back.
+
 ## What the build does differently to the current site
 - **Leads with the three-stage offer.** Full Builders Clean / Re-Clean / Final Clean is Festim's real differentiator and maps onto the construction handover process. On the Wix site it is plain text buried mid-page; here it is the first section after the hero.
 - **Keeps his positioning, sharpens the framing.** The hero runs on schedule risk ("Handover Ready. On Schedule.") rather than cleanliness, which is the angle his own copy already had in the line about inexperienced cleaners delaying project completion.
